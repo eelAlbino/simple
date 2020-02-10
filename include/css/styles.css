@@ -1,0 +1,47 @@
+body {
+    margin-top: 50px;
+}
+section {
+	padding: 25px 0;
+}
+.section-heading {
+    font-size: 30px;
+    margin: 0 0 25px 0;
+    padding: 5px 0px;
+}
+.answer_box{
+	padding: 10px 0px;
+}
+.answer_success{
+	background-color: #d3e2d3;
+    border: 1px solid #3b753d;
+    padding: 10px;
+    color: #08796f;
+    border-radius: 5px;
+}
+.answer_error{
+	background-color: #ffeeed;
+    border: 1px solid #F44336;
+    padding: 10px;
+    color: #630f08;
+    border-radius: 5px;
+}
+
+.catalog .catalog-elem{
+	border: 1px solid #999;
+    padding: 10px;
+    margin: 10px;
+    background-color: #efefef;
+    border-radius: 10px;
+}
+.catalog .catalog-elem .image-block img{
+	max-width: 200px;
+}
+.catalog .catalog-elem .text-block .name{
+	font-size: 20px;
+    font-weight: bolder;
+}
+.catalog .catalog-elem .text-block .price{
+	font-size: 16px;
+    font-weight: bolder;
+}

@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !/index.php$
+	RewriteCond %{REQUEST_FILENAME} !/$
+	RewriteRule ^(.*)$ /index.php?route=$1 [L,QSA]
+	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+	
+</IfModule>

@@ -1,0 +1,42 @@
+<div class="catalog">
+<?php if(isset($data["result"]) && !empty($data["result"]) ){?>
+	<?php if($data["result"]["name"] != ''){ ?>
+	<h1 class="section-heading" >раздел каталога "<?= $data["result"]["name"] ?>"(<?php
+	       echo $data["result"]['offers_count']?> тов.)</h1>
+	<?php } ?>
+	<div class="catalog-elements-block">
+	<?php foreach($data["result"]["offers"] as $arElement){?>
+    	<div class="catalog-elem row">
+    		<div class="image-block col-md-4 col-xs-12">
+    			<a href="<?=$arElement['url'] ?>" target="_blank" >
+    				<img alt="<?=$arElement['name'] ?>" src="<?=$arElement['image'] ?>" />
+    			</a>
+    		</div>
+    		<div  class="text-block col-md-8 col-xs-12">
+        		<div class="name">
+        			<a href="<?=$arElement['url'] ?>" target="_blank" ><?=$arElement['name'] ?></a>
+        		</div>
+        		<?php 
+        		if($arElement['price'] > 0){?>
+        		<div class="price"><?=number_format( $arElement['price'], 2, '.', ' ' )?> руб.</div>
+        		<?php 
+                }
+                ?>
+        		<div class="add-props"><?php
+        		if(!empty($arElement["authors"])){?>
+        			<div class="prop">
+        		      	<span class="prop-name">Автор<?php
+        		      	if(count($arElement["authors"]) > 1) echo 'ы'?>:</span>
+        		      	<span class="prop-value">
+        		      		<i><?=implode('</i>, <i>', $arElement["authors"]) ?></i>
+        		      	</span>
+        		     </div>
+        		<?php }?>
+        		</div>
+
+        	</div>
+    	</div>
+	<?php } ?>
+	</div>
+<?php } ?>
+</div>

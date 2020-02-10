@@ -1,0 +1,27 @@
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+
+      </div>
+    </div>
+  </footer>
+
+	<script src="<?=$controller->site_dir?>include/js/jquery.js"></script>
+	<script src="<?=$controller->site_dir ?>include/js/bootstrap.min.js"></script>
+	<script src="<?=$controller->site_dir ?>include/js/script.js"></script>
+	<?php if(isset($data["add_js_scripts"])){
+	    foreach($data["add_js_scripts"] as $script_path){?>
+	<script src="<?=$script_path ?>"></script>
+	  	<?php }
+	}?>
+</body>
+</html>
